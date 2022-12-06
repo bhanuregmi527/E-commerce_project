@@ -1,9 +1,9 @@
-const express= require('express')
+const express= require("express");
 const router=express.Router()
-const {getAllUsers}=require('../controllers/user')
+const {signup}=require("../controllers/user")
 
 
-router.get('/',getAllUsers)
+router.post("/signup",signup)
 
 
 
