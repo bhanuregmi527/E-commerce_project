@@ -32,13 +32,18 @@ const Header = () => {
       <Item key="setting:2">Option 2</Item>
     </SubMenu>
 
-      <Item key="register" icon={<UserAddOutlined />}  style={{marginLeft: "auto",color:"red"}}>
+    <Item key="login" icon={<LoginOutlined />} className="float-right btn-primary rounded-pill"  style={
+      {marginLeft: "auto",
+      marginRight:"4px",
+      color:"black"}
+    }>
+    <Link to='/login'>   Login</Link>
+    </Item>
+      <Item key="register" icon={<UserAddOutlined />} className="btn-danger"  style={{color:"black"}}>
       <Link to='/register'>   Register</Link>
       </Item>
 
-      <Item key="login" icon={<LoginOutlined />} className="float-right">
-      <Link to='/login'>   Login</Link>
-      </Item>
+     
 
    
     </Menu>
