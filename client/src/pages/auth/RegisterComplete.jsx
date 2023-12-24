@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react";
-// import {auth} from '../../firebase'
+import {auth} from '../../firebase'
 import {  sendSignInLinkToEmail,signInWithEmailLink ,getAuth,updatePassword  } from "firebase/auth";
 import {toast} from 'react-toastify'
 import { useNavigate } from "react-router-dom";
@@ -45,7 +45,7 @@ const handleSubmit= async(e)=>{
          //populate user to redux
          //redirect
          
-         navigate("/")
+         navigate("/");
       }
 
     } catch (error) {
