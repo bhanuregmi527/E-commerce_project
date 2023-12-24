@@ -2,12 +2,17 @@ import React,{useState,useEffect} from "react";
 // import {auth} from '../../firebase'
 import {  sendSignInLinkToEmail,signInWithEmailLink ,getAuth,updatePassword  } from "firebase/auth";
 import {toast} from 'react-toastify'
+import { useNavigate } from "react-router-dom";
 
-const RegisterComplete = ({history}) => {
+// ...
+
+
+
+const RegisterComplete = () => {
 const [email,setEmail]=useState('')
 const [password,setPassword]=useState('')
 const auth=getAuth()
-
+const navigate = useNavigate(); 
 //
 useEffect(()=>{
 setEmail(window.localStorage.getItem("emailForRegister"))
@@ -35,12 +40,12 @@ const handleSubmit= async(e)=>{
          let user= auth.currentUser;
          await updatePassword(user,password);
          const idTokenResult= await user.getIdTokenResult()
-         console.log("user========",user)
-         console.log("idToken",idTokenResult)
+         console.log("user========",user);
+         console.log("idToken",idTokenResult);
          //populate user to redux
          //redirect
          
-         history.push('/')
+         navigate("/")
       }
 
     } catch (error) {

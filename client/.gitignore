@@ -14,6 +14,7 @@ dist-ssr
 vite.config.js
 .eslintrc.cjs
 *.local
+.firebase/*
 
 # Editor directories and files
 .vscode/*
