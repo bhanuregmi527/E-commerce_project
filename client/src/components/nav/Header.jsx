@@ -9,7 +9,7 @@ import {
 // import './Header.css'
 import {Link} from 'react-router-dom';
 import {getAuth,signOut} from "firebase/auth";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 
@@ -20,6 +20,7 @@ const { SubMenu, Item } = Menu;
 const Header = () => {
   const [current, setCurrent] = useState("home");
   let dispatch= useDispatch();
+  let state=useSelector((state)=>state);
   const navigate = useNavigate(); 
   const auth=getAuth()
 
@@ -40,7 +41,7 @@ navigate('/login');
   return (
     <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
       <Item key="home" icon={<HomeOutlined />}>
-      <Link to='/'>   Home</Link>
+      <Link to='/'>Home - {console.log("state",state)}</Link>
       
       </Item>
       <SubMenu icon={<SettingOutlined />} title="Username">

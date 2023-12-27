@@ -45,7 +45,7 @@ const handleSubmit= async(e)=>{
          //populate user to redux
          //redirect
          
-         navigate("/");
+         navigate("/login");
       }
 
     } catch (error) {
